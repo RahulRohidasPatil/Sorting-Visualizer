@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow&display=swap" rel="stylesheet">
+<link rel="shortcut icon" type="image/jpg" href="images/favicon.ico"/>     
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sorting Visualizer">
+    <title>Sorting Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body
+    style="margin: 0; height: 100vh; background-color: var(--primary-color); color: var(--secondary-color); grid-template-rows: max-content auto max-content;">
+    <div style="grid-template-columns: max-content auto;">
+        <div id="projectName" class="beforeStart" style="transition: font-size 1s;">Sorting Visualizer </div>
+        <div id="inputs">
+            <select id="algo" title="Algorithm">
+                <option value="bs">Bubble Sort</option>
+                <option value="is">Insertion Sort</option>
+                <option value="ss">Selection Sort</option>
+                <option value="qs">Quick Sort</option>
+                <option value="ms">Merge Sort</option>
+            </select>
+            <label for="numbers">Enter Numbers:</label>
+            <input id="numbers" placeholder="from 10 to 99" pattern="\d{2}(\D+\d{2})*" oninput="generateGraph()">
+           <button type="button" class="btn btn-primary btn-color btn-bg-color btn-sm col-xs-2 btn-primary-spacing btn btn-secondary" onclick="randomizeGraph()">Randomize Graph</button>
+           <img src="images/moon.png" id="icon">
+        </div>
+    </div>
+    <div id="graph" class="graph1" style="display: flex; justify-content: center; align-items: flex-end;"></div>
+    <div style="grid-template-columns: auto max-content;">
+        <span class="text-wrapper">
+        <div id="sbar" class="textani" style="font-family: 'Courier New', Courier, monospace;">Status!</div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+        <div style="grid-template-columns: auto auto auto auto; gap: 1vmin;">
+            <label for="speed">Control Speed:</label>
+            <input id="speed" type="range" min="1" max="5" onchange="delay=1500/value;">
+            <button id="startbtn" button type="button" class="btn btn-warning"  onclick="sort()">Start</button>
+            <button id="finishbtn" button type="button" class="btn btn-success" onclick="delay=0;" disabled>Finish</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+    var icon = document.getElementById("icon");
+    icon.onclick = function(){
+        document.body.classList.toggle("dark-theme");
+        if(document.body.classList.contains("dark-theme")){
+           icon.src ="images/sun.png";
+            }else{
+               icon.src ="images/moon.png";
+            } 
+        }      
+    </script>
+
+</body>
+</html>
+
+
+

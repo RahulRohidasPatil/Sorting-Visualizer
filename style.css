@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: 600;
+    font-family: 'Barlow', sans-serif;
+}
+
+:root {
+    --primary-color: #F5F5F5;
+    --secondary-color: #2F4F4F;
+    --color: #88f;
+    --color-2: #88f;
+    --color-3: #8f8;
+    --color-4: #f88;
+    --color-5: #8ff;
+    --color-6: #9ddfd3;
+    --color-7: #f8f;
+}
+
+.dark-theme {
+    --primary-color: #000000;
+    --secondary-color: #fff;
+    --color: #007;
+    --color-2: #007;
+    --color-3: #070;
+    --color-4: #700;
+    --color-5: #077;
+    --color-6: #025955;
+    --color-7: #707;
+}
+
+#icon {
+    width: 23px;
+    cursor: pointer;
+}
+
+body, input {
+    text-align: center;
+}
+
+body, body>div:first-child, body>div:nth-child(3), div:nth-child(3)>div:last-child {
+    display: grid;
+}
+
+body>div:first-child, body>div:nth-child(3) {
+    background-color: var(--primary-color);
+}
+
+body>div:first-child, body>div:nth-child(3), div:nth-child(3)>div:last-child {
+    align-items: center;
+}
+
+body>div:first-child>div:first-child, div:nth-child(3)>div:first-child {
+    color: var(--secondary-color);
+}
+
+body>div, #graph>div {
+    padding: 1vmin;
+}
+
+button:enabled {
+    cursor: pointer;
+}
+
+#graph>div {
+    background-color: var(--color);
+    border-radius: 1vmin;
+    box-sizing: border-box;
+}
+
+#graph>div:not(:first-child) {
+    margin-left: 1vmin;
+}
+
+.beforeStart {
+    font-size: 2vmax;
+}
+
+.sorting {
+    border-top: thick dashed #333;
+    border-bottom: thick dashed #333;
+    background-color: var(--primary-color);
+}
+
+.afterStart {
+    font-size: 1vmax;
+    text-decoration: underline;
+}
+
+.btn-primary-spacing {
+    margin-right: 5px;
+    margin-bottom: 5px !important;
+}
+
+.textani {
+  position: relative;
+  font-weight: 700;
+  font-size: 1.5em;
+}
+.textani .letters {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  top: 0.3em;
+  right: 0;
+  opacity: 0; 
+}
